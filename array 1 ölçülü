@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+void calculateStats(int arr[], int size) {
+    int sum = 0;
+    int product = 1;
+    int min = arr[0];
+    int max = arr[0];
+
+    for (int i = 0; i < size; i++) {
+        sum += arr[i];           // cəm
+        product *= arr[i];       // hasil
+
+        if (arr[i] < min) 
+            min = arr[i];        // minimum
+        if (arr[i] > max) 
+            max = arr[i];        // maksimum
+    }
+
+    cout << "Cem: " << sum << endl;
+    cout << "Hasil: " << product << endl;
+    cout << "Minimum: " << min << endl;
+    cout << "Maksimum: " << max << endl;
+}
+
+int main() {
+    int arr[] = {3, 7, -2, 10, 5};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    calculateStats(arr, size);
+
+    return 0;
+}
